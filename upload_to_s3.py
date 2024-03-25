@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 import boto3
 import json
@@ -30,10 +32,10 @@ def create_bucket(bucket_name, region=None):
 
 def upload_logData():
     # where the log data resides in the instance
-    dire = r"/home/ubuntu/data/log_data/"
+    dire = r"/home/ec2-user/MongoDB/data/log_data/"
     s3 = boto3.client("s3")
     bucket = "dsaci"
-    # key is the file name – I have just used numbers
+    # key is the file name - I have just used numbers
     key = 509
     for root, dirs, files in os.walk(dire):
         for filename in files:
